@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For you babe 💕</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      background: white;
+      padding: 35px;
+      border-radius: 20px;
+      max-width: 420px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      animation: fadeIn 1s ease;
+    }
+
+    h2 {
+      color: #ff4d6d;
+    }
+
+    p {
+      color: #444;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px 24px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    .btn-secondary {
+      background: #eee;
+      color: #333;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="card" id="content">
+  <h2>Swapnil 💙</h2>
+  <p>
+    I could’ve said this normally.  
+    <br><br>
+    But you know me —  
+    I like a little drama.
+  </p>
+  <button class="btn-primary" onclick="next1()">Continue</button>
+  <button class="btn-secondary" onclick="next1()">I feel suspicious</button>
+</div>
+
+<script>
+  const content = document.getElementById("content");
+
+  function next1() {
+    content.innerHTML = `
+      <h2>Quick Question 😌</h2>
+      <p>You’re dealing with my drama.<br>What do you do?</p>
+      <button class="btn-primary" onclick="answer()">Try to stay calm</button>
+      <button class="btn-secondary" onclick="answer()">Give up</button>
+    `;
+  }
+
+  function answer() {
+    content.innerHTML = `
+      <h2>Interesting 🤍</h2>
+      <p>
+        Because whether you try to stay calm…<br>
+        or you give up…<br><br>
+        <strong>You already gave up.</strong>
+        <br><br>
+        Relax. I’m smiling.
+      </p>
+      <button class="btn-primary" onclick="finalQ()">Okay 😅</button>
+      <button class="btn-secondary" onclick="finalQ()">I had no choice</button>
+    `;
+  }
+
+  function finalQ() {
+    content.innerHTML = `
+      <h2>One Last Thing 💌</h2>
+      <p>
+        This is our first Valentine’s Day.<br><br>
+        I wanted to ask you properly.
+        <br><br>
+        <strong>Will you be my Valentine?</strong>
+      </p>
+      <button class="btn-primary" onclick="end()">Yes 💖</button>
+      <button class="btn-secondary" onclick="end()">Obviously yes 😏</button>
+    `;
+  }
+
+  function end() {
+    content.innerHTML = `
+      <h2>💖</h2>
+      <p>
+        Thank you for choosing me.<br>
+        I choose you — every day.
+        <br><br>
+        Happy Valentine’s Day 🤍
+      </p>
+    `;
+  }
+</script>
+
+</body>
+</html>
