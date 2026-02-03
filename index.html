@@ -64,23 +64,23 @@ function scene1() {
   `;
 }
 
-/* SCENE 2 — FUN DRAMA SETUP */
+/* SCENE 2 — COMMITMENT TEASE */
 function scene2() {
   card.innerHTML = `
-    <h2>Good.</h2>
+    <h2>Good 😌</h2>
     <p>
-      Because you clicked.<br>
-      And that’s commitment.
+      You clicked.<br>
+      That already says a lot.
     </p>
     <button class="primary" onclick="scene3()">Continue</button>
     <button class="secondary" onclick="scene3()">I feel trapped</button>
   `;
 }
 
-/* SCENE 3 — DILEMMA QUESTION */
+/* SCENE 3 — DRAMA DILEMMA */
 function scene3() {
   card.innerHTML = `
-    <h2>Quick question 😌</h2>
+    <h2>Quick question</h2>
     <p>
       You’re dealing with my drama.<br>
       What do you do?
@@ -90,60 +90,70 @@ function scene3() {
   `;
 }
 
-/* SCENE 4 — LAUGH + CONFIDENT OVERRIDE */
+/* SCENE 4 — LAUGH IT OFF */
 function scene4() {
   card.innerHTML = `
-    <h2>Interesting.</h2>
+    <h2>Interesting 🤍</h2>
     <p>
       Because whether you try to stay calm…<br>
       or you give up…<br><br>
       <strong>You already gave up.</strong>
     </p>
-    <p>
-      Relax. I’m smiling.
-    </p>
+    <p>Relax. I’m smiling.</p>
     <button class="primary" onclick="scene5()">Okay 😅</button>
     <button class="secondary" onclick="scene5()">I had no choice</button>
   `;
 }
 
-/* SCENE 5 — FAKE EXIT */
+/* SCENE 5 — THE QUESTION (YES / NO PROPERLY) */
 function scene5() {
   card.innerHTML = `
-    <h2>Before we continue…</h2>
-    <p>
-      You’re allowed to leave now.<br>
-      No hard feelings.
-    </p>
-    <button class="primary" onclick="fakeExit()">Exit safely</button>
-    <button class="secondary" onclick="scene6()">Stay. I’m curious</button>
-  `;
-}
-
-function fakeExit() {
-  card.innerHTML = `
-    <h2>Error 😌</h2>
-    <p>
-      Exit not found.<br>
-      Nice try though.
-    </p>
-    <button class="primary" onclick="scene6()">Continue anyway</button>
-    <button class="secondary" onclick="scene6()">I knew this would happen</button>
-  `;
-}
-
-/* SCENE 6 — FINAL QUESTION */
-function scene6() {
-  card.innerHTML = `
-    <h2>Okay. One last thing 💌</h2>
+    <h2>One last thing 💌</h2>
     <p>
       This is our first Valentine’s Day.<br><br>
-      I wanted to ask you properly.
-      <br><br>
-      <strong>Will you be my Valentine?</strong>
+      Will you be my Valentine?
     </p>
-    <button class="primary" onclick="end()">Yes 💖</button>
-    <button class="secondary" onclick="end()">Obviously yes 😏</button>
+    <button class="primary" onclick="yesPath()">Yes 💖</button>
+    <button class="secondary" onclick="noPath()">No 😐</button>
+  `;
+}
+
+/* YES PATH */
+function yesPath() {
+  card.innerHTML = `
+    <h2>💖</h2>
+    <p>
+      I knew it.<br>
+      But I still wanted to hear it.
+    </p>
+    <button class="primary" onclick="end()">Come here 🤍</button>
+    <button class="secondary" onclick="end()">I smiled</button>
+  `;
+}
+
+/* NO PATH — FUN DILEMMA */
+function noPath() {
+  card.innerHTML = `
+    <h2>Oh 😌</h2>
+    <p>
+      Bold choice.<br>
+      Are you saying no because—
+    </p>
+    <button class="primary" onclick="caught()">You enjoy testing me</button>
+    <button class="secondary" onclick="caught()">You want to see what happens</button>
+  `;
+}
+
+/* CAUGHT → LAUGH → FORWARD */
+function caught() {
+  card.innerHTML = `
+    <h2>There it is 😂</h2>
+    <p>
+      Either way, you’re smiling right now.<br><br>
+      And that’s all I needed to know.
+    </p>
+    <button class="primary" onclick="end()">Okay fine 🤍</button>
+    <button class="secondary" onclick="end()">I got caught</button>
   `;
 }
 
@@ -152,7 +162,7 @@ function end() {
   card.innerHTML = `
     <h2>🤍</h2>
     <p>
-      Thank you for choosing me.<br>
+      Thank you for playing along.<br>
       I choose you — every day.
       <br><br>
       Happy first Valentine’s Day.
